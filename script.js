@@ -6,18 +6,34 @@ let upperAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H","I","J","K","L","M",
 let numbers = [0,1,2,3,4,5,6,7,8,9]
 let special = [" ", "!", '"', "$","#","%","&","(",")"]
 
+let builtArray = []
+// let generatedLetterIndex = Math.floor(math.random()*builtArray.length)
 
 function generatePassword () {
-  if (confirm("Do you want your password to contain lower case letters?")){
+  if (confirm("Do you want your password to contain lower case letters?")) 
+  {
+    builtArray = [...builtArray, ...lowerAlphabet];
 
   }
   
-  if(confirm("Do you want your password to contain uppercase letters?")){
+  if(confirm("Do you want your password to contain uppercase letters?"))
+  {
+
+   builtArray = [...builtArray, ...upperAlphabet];
 
   }
 
-  if (confirm("Do you want your password to contain special characters?")){
+  if (confirm("Do you want your password to contain numbers"))
+  {
 
+    builtArray = [...builtArray, ...numbers];
+
+  }
+  
+  if (confirm("Do you want your password to contain special characters?"))
+  {
+
+    builtArray = [...builtArray, ...special];
   }
 
   let password = "";
@@ -27,7 +43,6 @@ function generatePassword () {
     password += "x";
   
   return password
-}
 
 // Write password to the #password input
 function writePassword() {
