@@ -11,7 +11,12 @@ let builtArray = []
 
 function generatePassword () {
   let password = "";
-  let passwordLength =prompt("How many characters do your want your password to be?")
+  let passwordLength =prompt("Select a password length between 8 and 128 characters")
+
+  while (passwordLength < 8 || passwordLength > 128) {
+    alert ("password must be between 8 and 128 characters")
+    passwordLength =prompt("Select a password length between 8 and 128 characters")
+  }
   
   if (confirm("Do you want your password to contain lower case letters?")) 
   {
