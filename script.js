@@ -7,10 +7,12 @@ let numbers = [0,1,2,3,4,5,6,7,8,9]
 let special = [" ", "!", '"', "$","#","%","&","(",")"]
 
 let builtArray = []
-let value = []
 
 
 function generatePassword () {
+  let password = "";
+  let passwordLength =prompt("How many characters do your want your password to be?")
+  
   if (confirm("Do you want your password to contain lower case letters?")) 
   {
     builtArray = [...builtArray, ...lowerAlphabet];
@@ -37,9 +39,6 @@ function generatePassword () {
     builtArray = [...builtArray, ...special];
   }
 
-  let password = "";
-  let passwordLength =prompt("How many characters do your want your password to be?")
-   
    for (let index = 0; index < passwordLength; index++) {
       let generatedLetterIndex= Math.floor(Math.random()*builtArray.length)
      
@@ -48,15 +47,6 @@ function generatePassword () {
     }
   return password
 }
-
-
-
-// function randomCharacter () {
-//   let generatedLetterIndex = Math.floor(Math.random()*builtArray.length)
-//   builtArray[generatedLetterIndex]
-
-  
-// }
 
 
 // Write password to the #password input
