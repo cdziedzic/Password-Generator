@@ -23,6 +23,7 @@ function generatePassword () {
     passwordLength =prompt("Select a password length between 8 and 128 characters")
   }
   
+  // Variables to validate whether user selected at least 1 character type
   let confirmLowerCase = confirm("Do you want your password to contain lower case letters?")
   let confirmUpperCase = confirm("Do you want your password to contain uppercase letters?")
   let confirmNumber =  confirm("Do you want your password to contain numbers?")
@@ -55,6 +56,7 @@ function generatePassword () {
     builtArray = [...builtArray, ...special];
   }
 
+  //test to see if at least one character type is selected
 if (confirmLowerCase === false && confirmUpperCase === false && confirmNumber === false && confirmSpecial === false) {
   alert("must select at least one character type");
   return null;
@@ -77,6 +79,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+ // clear the array before each click of generate button
   builtArray = []
 }
 
