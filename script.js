@@ -23,32 +23,42 @@ function generatePassword () {
     passwordLength =prompt("Select a password length between 8 and 128 characters")
   }
   
+  let confirmLowerCase = confirm("Do you want your password to contain lower case letters?")
+  let confirmUpperCase = confirm("Do you want your password to contain uppercase letters?")
+  let confirmNumber =  confirm("Do you want your password to contain numbers?")
+  let confirmSpecial = confirm("Do you want your password to contain special characters?")
+
   //If statement that adds each type of character to the potential password
-  if (confirm("Do you want your password to contain lower case letters?")) 
+  if (confirmLowerCase) 
   {
     builtArray = [...builtArray, ...lowerAlphabet];
 
   }
   
-  if(confirm("Do you want your password to contain uppercase letters?"))
+  if (confirmUpperCase)
   {
 
    builtArray = [...builtArray, ...upperAlphabet];
 
   }
 
-  if (confirm("Do you want your password to contain numbers?"))
+  if (confirmNumber)
   {
 
     builtArray = [...builtArray, ...numbers];
 
   }
   
-  if (confirm("Do you want your password to contain special characters?"))
+  if (confirmSpecial) 
   {
 
     builtArray = [...builtArray, ...special];
   }
+
+if (confirmLowerCase === false && confirmUpperCase === false && confirmNumber === false && confirmSpecial === false) {
+  alert("must select at least one character type");
+  return null;
+}
 
   //generate random characters based on password length
    for (let index = 0; index < passwordLength; index++) {
